@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "dev-lite": "next dev"
+    "devlite": "next dev"
   },
   "dependencies": {
     "daisyui": "^5.0.50",
