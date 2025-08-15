@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -24,10 +25,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-base-100`}>
+        {/* Navbar DaisyUI */}
+        <nav className="navbar bg-base-200 mb-8">
+          <div className="container mx-auto flex justify-between items-center">
+            <Link className="btn btn-ghost text-xl" href="/">Portofolio</Link>
+            <ul className="menu menu-horizontal px-1">
+              <li><a href="/about">About</a></li>
+              <li><a href="/projects">Projects</a></li>
+              <li><a href="/skills">Skills</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+        <main className="min-h-[70vh] container mx-auto">{children}</main>
+        {/* Footer DaisyUI */}
+        <footer className="footer footer-center p-4 bg-base-200 text-base-content mt-8">
+          <aside>
+            <p>© {new Date().getFullYear()} DenisXDaus. All rights reserved.</p>
+          </aside>
+        </footer>
       </body>
     </html>
   );
